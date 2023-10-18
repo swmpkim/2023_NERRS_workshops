@@ -1,6 +1,6 @@
 Welcome! The two R workshops at the 2023 NERRS Annual Meeting will be largely intertwined, so materials for both will be found in this GitHub Repository. Preparation for both workshops is the same. I have been assured coffee will be provided, but I also understand if you'd rather bring some, just in case.
 
-# Pre-workshop prep
+# Install these things before the workshops  
 
 You're bringing a laptop, right? You don't truly *have to*, but you'll probably get bored if you don't. Here's what you need to have on it. **Please don't wait until the last minute, in case you need to get someone with administrative privileges to install these programs!**
 
