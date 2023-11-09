@@ -1,0 +1,91 @@
+---
+title: "Problem-Solving Exercises"
+format: html
+date: 2023-11-08
+date-modified: last-modified
+embed-resources: true
+execute:
+    eval: false
+    echo: true
+    warning: false
+    error: true
+    
+---
+
+# Instructions  
+
+Each code chunk has some sort of problem in it. Figure out how to make it work. Each chunk can be run independently of any others.  
+
+```{r}
+data(mtcars)
+
+plot(mpg ~ hp, data = mtcars)
+plt(mpg ~ hp, data = mtcars, col = carb)
+```
+
+
+```{r}
+data(iris)
+head(iris)
+
+# calculate length:width ratios
+ratios_df <- data.frame(
+    Sepal = iris$Sepal.Length / iris$Sepal.Width,
+    Petal = iris$Petal.Length / iris$Petal.Width,
+    species = iris$Species
+)
+
+# plot them
+plot(ratios_df$Sepal)
+plot(ratios_df$Petal)
+
+# color by species
+plot(ratios_df$Sepal, col = ratios_df$Species)
+plot(ratios_df$Petal, col = ratios_df$species)
+```
+
+
+## Read in some WQ data  
+
+```{r}
+#| eval = FALSE 
+
+
+# I'm not messing up this bit (not on purpose, anyway - it may not work if you try to evaluate this chunk during rendering):
+bcwq <- read.csv("Data/GNDBCWQ012422.csv",
+                 skip = 9,
+                 header = FALSE)
+names(bcwq) <- strsplit(readLines("Data/GNDBCWQ012422.csv", n = 9L)[9], split = ",")[[1]]
+names(bcwq)[15] <- "Temp C"
+
+# now a couple of these will be wrong
+plot(bcwq$`Depth m`)
+plot(bcwq$`ODO mg/L`)
+plot(bcwq$pH)
+plot(bcwq$spcond)
+plot(bcwq$'Sal psu')
+plot(bcwq$`Battery V`)
+plot(`Sal psu` ~ `SpCond mS/cm`, data = bcwq)
+plot(`SpCond mS/cm` ~ `Temp C`, data = bcwq)
+plot(ph ~ `Sal psu`, data = bcwq)
+plot(`ODO mg/L` ~ 'Temp C', data = bcwq)
+plot(`Sal psu` ~ `Date (MM/DD/YYYY)`, data = bcwq)
+plot(bcwq$`Sal psu` ~ as.Date(bcwq$`Date (MM/DD/YYYY)`))
+```
+
+
+## Veg data  
+
+```{r}
+veg <- read.csv("Data/GNDveg2018.csv")
+
+boxplot(Cover ~ Species, data = veg)
+
+# you may want to examine both this data frame and the iris data frame to help solve this one (look back at the plot on line 44 - why did that work, and this doesn't?)
+plot(veg$Lat ~ veg$Long, col = veg$SiteID)
+
+# profile of transect 1 at 'spal' site
+spalT1 <- veg[veg$SiteID == "spal" & veg$TransectID == 1, ]
+plot(`Orthometric Height` ~ Long, data = spalsite, type = "b")
+```
+

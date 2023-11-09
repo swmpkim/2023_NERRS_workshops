@@ -1,0 +1,70 @@
+---
+title: "Intro workshop exercises"
+embed-resources: true
+format: html
+editor: visual
+---
+
+This document is slightly modified from the default Quarto doc template.
+
+## Quarto
+
+Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+
+## Running Code
+
+You can run code interactively, while you have the .qmd file open, as you develop it. You can run a single line with the keyboard shortcut `Ctrl`/`Cmd` + `Enter` or by selecting "Run Selected Line(s)" from the "Run" button in the upper right side of this pane. You can run an entire chunk by clicking the green arrow in the top right corner of the chunk, or from the "Run" button above and/or the associated keyboard shortcut.
+
+When you click the **Render** button (top of this pane) a document will be generated that includes both content and the output of embedded code.
+
+This is what a code chunk looks like. Try all the different ways of running it.
+
+```{r}
+# this is a code comment  
+# the line below is code that will run
+
+1 + 1
+```
+
+Here is a code chunk that does a little more. Run this one too.
+
+```{r}
+x <- 2  
+y <- 1:5
+
+x + y
+```
+
+## Hiding Code
+
+In the final rendered document, you show only the results of the code, not the code itself, by using a special "chunk option" that looks like a comment.
+
+```{r}
+#| echo: false  
+
+# all you'll see in the output is `4`
+2 + 2
+```
+
+
+## Working Directory  
+
+Run this interactively, and paste the output below the code chunk. Compare that path to the path that shows up when the document is rendered.  
+
+```{r}
+getwd()
+```
+
+Interactive working directory:  
+
+
+Working directories can get a little confusing when you're in .Rmd or .qmd documents. The `here` package is very useful to use in conjunction with RStudio Projects (.RProj file), because it acts like an "anchor" and looks for files relative to the folder that contains the .RProj file.  
+
+## Your turn  
+
+Write some text and some code, and run it! If you want to insert new code chunks, you can do that through the menu: Code - Insert Chunk; through a keyboard shortcut: `Ctrl`/`Cmd` + `Alt` + `i`; or the hard way, by typing out all the backticks (NOT apostrophes - look to the left of your #1 key, under the ~) and the bracketed letter r.     
+
+```{r}
+
+```
+

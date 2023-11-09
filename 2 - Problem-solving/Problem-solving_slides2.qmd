@@ -1,0 +1,61 @@
+---
+title: "How to solve problems in R"
+subtitle: ""
+author: Kim Cressman
+date: 2023-11-12
+embed-resources: true
+format: 
+    revealjs:
+        incremental: true
+        theme: solarized
+        footer: "2023 NERRS Meeting"
+        code-line-numbers: true
+        slide-number: c/t
+---
+
+# Intro and what we will tackle today
+
+## It's universal   
+
+![](../images/experience meme.png) 
+
+## Problems in R
+
+Most of *my* problems arise from one of the following:
+
+-   R is looking in the wrong place for a file\
+-   Something is spelled wrong\
+-   "Misspellings" include forgetting what I named a variable, and trying to call it as something else\
+-   I'm trying to run a function with the wrong type of input
+
+## Major types of problem in R
+
+1.  Something isn't working.
+    a.  Spelling, punctuation, file path problem, function input problem
+    b.  More complicated errors\
+2.  You don't even know what to do.
+    a.  Is there a function to run \[this analysis\]?\
+    b.  How do I run an NMDS?\
+3.  You figure out an answer for 2, but then it doesn't work and you're back at 1.
+
+::: notes
+Punctuation - mainly parentheses or brackets. RStudio helps a lot with this - tells you when something is wrong (in the left margin), and enabling "rainbow parentheses" in the global options is MAGICAL.
+
+Tools menu -- Global Options -- Code (from left pane) -- Display (a tab in main pane) -- Syntax (in the Display tab) -- bottom option: "Use rainbow parentheses"
+:::
+
+# How to start troubleshooting
+
+## Get specific about the problem
+
+-   Did you get an error message? Was it just a warning?\
+-   Did you not get output at all?\
+-   Did you get output, but it doesn't look right?\
+-   What caused the error? You may have to scroll up, if you haven't been running code line-by-line.
+
+::: notes
+Line-by-line is GREAT for troubleshooting.
+
+The FIRST error will make a bunch of things fail downstream.
+:::
+
