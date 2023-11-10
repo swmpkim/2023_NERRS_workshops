@@ -48,7 +48,7 @@ plot(ratios_df$Petal, col = ratios_df$species)
 ## Read in some WQ data  
 
 ```{r}
-#| eval = FALSE 
+#| eval: FALSE 
 
 
 # I'm not messing up this bit (not on purpose, anyway - it may not work if you try to evaluate this chunk during rendering):
@@ -77,6 +77,7 @@ plot(bcwq$`Sal psu` ~ as.Date(bcwq$`Date (MM/DD/YYYY)`))
 ## Veg data  
 
 ```{r}
+#| eval: false
 veg <- read.csv("Data/GNDveg2018.csv")
 
 boxplot(Cover ~ Species, data = veg)
